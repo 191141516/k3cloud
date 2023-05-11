@@ -8,6 +8,10 @@ import (
 
 type HashMap map[string]interface{}
 
+func (h *HashMap) GetJsonByte() ([]byte, error) {
+	return json.Marshal(h)
+}
+
 // MergeHashMap. 合并map
 func MergeHashMap(toMap *HashMap, subMaps ...*HashMap) *HashMap {
 	if toMap == nil {
